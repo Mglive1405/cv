@@ -1,194 +1,602 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Kawadis - CV</title>
-    <meta name="description" content="Abdullah Kawadis - Personal CV and Portfolio">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.1/css/boxicons.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdullah Kawadis — AI Graduate Portfolio</title>
+  <meta name="description" content="Abdullah Zeyed Kawadis — Fresh BCS (Hons) AI Graduate from MMU. Specialising in Machine Learning, Computer Vision, Cybersecurity & Full-Stack Development." />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Fira+Code:wght@400;500&family=Noto+Sans+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" />
 </head>
 <body>
-    <header class="header" id="header">
-        <nav class="nav container">
-            <a href="#" class="nav__logo">Abdullah Kawadis</a>
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-                    <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-                    <li class="nav__item"><a href="#qualification" class="nav__link">Qualification</a></li>
-                    <li class="nav__item"><a href="#projects" class="nav__link">Projects</a></li>
-                    <li class="nav__item"><a href="#contact" class="nav__link">Contact Me</a></li>
-                </ul>
-            </div>
-            <div class="nav__btns">
-                <i class="bx bx-moon change-theme" id="theme-button"></i>
-            </div>
-        </nav>
-    </header>
+  <canvas id="hero-canvas"></canvas>
 
-    <section class="home section" id="home">
-        <div class="home__container container grid">
-            <div class="home__content animate__animated animate__fadeInLeft">
-                <img src="images/pfp.jpg" alt="Abdullah Kawadis" class="home__img">
-                <h1 class="home__title">Abdullah Kawadis</h1>
-                <span class="home__subtitle">Undergraduate 2nd-year university student studying BCS in AI</span>
-            </div>
+  <!-- ===== NAVBAR ===== -->
+  <header class="header" id="header">
+    <nav class="nav container">
+      <a href="#home" class="nav__logo">
+        <span class="nav__logo-bracket">&lt;</span>AK<span class="nav__logo-bracket">/&gt;</span>
+      </a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li><a href="#home"           class="nav__link active-link" data-i18n="nav.home">Home</a></li>
+          <li><a href="#about"          class="nav__link" data-i18n="nav.about">About</a></li>
+          <li><a href="#skills"         class="nav__link" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#experience"     class="nav__link" data-i18n="nav.exp">Experience</a></li>
+          <li><a href="#projects"       class="nav__link" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="#certifications" class="nav__link" data-i18n="nav.certs">Certs</a></li>
+          <li><a href="#contact"        class="nav__link" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="nav__actions">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Toggle language">
+          <span class="lang-toggle__label" id="lang-label">EN</span>
+          <span class="lang-toggle__sep">/</span>
+          <span class="lang-toggle__label">AR</span>
+        </button>
+        <a href="#contact" class="nav__cta" id="hire-btn" data-i18n="hire">Hire Me</a>
+        <button class="nav__hamburger" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero section" id="home">
+    <div class="hero__container container">
+      <div class="hero__content reveal">
+
+        <div class="hero__avatar-wrap">
+          <div class="hero__avatar-ring"></div>
+          <img src="images/pfp.jpeg" alt="Abdullah Kawadis" class="hero__avatar" id="hero-avatar" />
+          <span class="hero__status">
+            <span class="hero__status-dot"></span><span data-i18n="status">Open to Opportunities</span>
+          </span>
         </div>
-    </section>
 
-    <section class="about section" id="about">
-        <h2 class="section__title">About Me</h2>
-        <div class="about__container container grid">
-            <img src="images/pfp.jpg" alt="Abdullah Kawadis" class="about__img animate__animated animate__fadeInLeft">
-            <div class="about__data animate__animated animate__fadeInRight">
-                <p class="about__description">My name is Abdullah Kawadis, and I am currently a 2nd-year undergraduate student at MMU studying BCS in AI. I have a strong interest in artificial intelligence and machine learning.</p>
-            </div>
+        <p class="hero__eyebrow" data-i18n="hero.eyebrow">Hello, I'm</p>
+        <h1 class="hero__name">Abdullah <span class="hero__name-accent">Kawadis</span></h1>
+
+        <p class="hero__role">
+          <span class="hero__role-static" data-i18n="hero.role">Fresh Graduate &amp; </span>
+          <span class="hero__typewriter" id="typewriter"></span>
+          <span class="hero__cursor">|</span>
+        </p>
+
+        <div class="hero__degree-badge">
+          <i class="bx bxs-graduation"></i>
+          <span data-i18n="hero.degree">BCS (Hons) Artificial Intelligence &nbsp;·&nbsp; MMU &nbsp;·&nbsp; CGPA <strong>3.21</strong></span>
         </div>
-    </section>
 
-    <section class="skills section" id="skills">
-        <h2 class="section__title">Skills</h2>
-        <div class="skills__container container grid">
-            <div class="skills__content animate__animated animate__fadeInUp">
-                <h3 class="skills__title">Programming Languages</h3>
-                <div class="skills__box">
-                    <div class="skills__group">
-                        <div class="skills__data">
-                            <i class="bx bxl-html5"></i>
-                            <h3 class="skills__name">HTML</h3>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxl-css3"></i>
-                            <h3 class="skills__name">CSS</h3>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxl-javascript"></i>
-                            <h3 class="skills__name">JavaScript</h3>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxl-python"></i>
-                            <h3 class="skills__name">Python</h3>
-                        </div>
-                    </div>
-                    <div class="skills__group">
-                        <div class="skills__data">
-                            <i class="bx bxl-php"></i>
-                            <h3 class="skills__name">PHP</h3>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxl-nodejs"></i>
-                            <h3 class="skills__name">NodeJs</h3>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxs-data"></i>
-                            <h3 class="skills__name">MySQL</h3>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxl-c-plus-plus"></i>
-                            <h3 class="skills__name">C++</h3>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxl-java"></i>
-                            <h3 class="skills__name">Java</h3>
-                        </div>
-                        <div class="skills__data">
-                            <i class="bx bxl-lisp"></i>
-                            <h3 class="skills__name">Lisp</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <p class="hero__bio" data-i18n-html="hero.bio">
+          Freshly graduated from <strong>Multimedia University</strong>, Malacca. Passionate about building
+          intelligent systems — from machine learning pipelines and computer vision to secure, beautiful web applications.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary" data-i18n-html="hero.cta1"><i class="bx bx-code-block"></i> View My Work</a>
+          <a href="#contact"  class="btn btn--ghost"   data-i18n-html="hero.cta2"><i class="bx bx-send"></i> Get In Touch</a>
         </div>
-    </section>
 
-    <section class="qualification section" id="qualification">
-        <h2 class="section__title">Qualification</h2>
-        <div class="qualification__container container">
-            <div class="qualification__content animate__animated animate__fadeInUp">
-                <h3 class="qualification__title">Education</h3>
-                <div class="qualification__box">
-                    <div class="qualification__data">
-                        <h3 class="qualification__name">Al-kon International School</h3>
-                    </div>
-                    <div class="qualification__data">
-                        <h3 class="qualification__name">MMU - BCS in AI</h3>
-                    </div>
-                </div>
-            </div>
+        <div class="hero__socials">
+          <a href="mailto:abdullahquadis@gmail.com" class="hero__social-link" aria-label="Email"><i class="bx bxs-envelope"></i></a>
+          <a href="https://github.com/" target="_blank" rel="noopener" class="hero__social-link" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener" class="hero__social-link" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
         </div>
-    </section>
 
-    <section class="projects section" id="projects">
-        <h2 class="section__title">Projects</h2>
-        <div class="projects__container container grid">
-            <div class="project__content animate__animated animate__fadeIn">
-                <img src="images/The Preschool Math Learning System web.png" alt="The Preschool Math Learning System web" class="project__img">
-                <h3 class="project__title">The Preschool Math Learning System web</h3>
-            </div>
-            <div class="project__content animate__animated animate__fadeIn">
-                <img src="images/Machine-Learning-COVID-19-Predictive-Modeling-for-future-cases.png" alt="Machine-Learning-COVID-19-Predictive-Modeling-for-future-cases" class="project__img">
-                <h3 class="project__title">Machine-Learning-COVID-19-Predictive-Modeling-for-future-cases</h3>
-            </div>
-            <div class="project__content animate__animated animate__fadeIn">
-                <img src="images/Discord audio bot.png" alt="Discord audio bot" class="project__img">
-                <h3 class="project__title">Discord audio bot</h3>
-            </div>
-            <div class="project__content animate__animated animate__fadeIn">
-                <img src="images/Implementation of Parts Recognition and Counting System.png" alt="Implementation of Parts Recognition and Counting System" class="project__img">
-                <h3 class="project__title">Implementation of Parts Recognition and Counting System</h3>
-            </div>
-            <div class="project__content animate__animated animate__fadeIn">
-                <img src="images/An Application Development for Air Quality Insights for Southeast Asia web.png" alt="An Application Development for Air Quality Insights for Southeast Asia web" class="project__img">
-                <h3 class="project__title">An Application Development for Air Quality Insights for Southeast Asia web</h3>
-            </div>
-            <div class="project__content animate__animated animate__fadeIn">
-                <img src="images/Solar system cycle web.png" alt="Solar system cycle web" class="project__img">
-                <h3 class="project__title">Solar system cycle web</h3>
-            </div>
+      </div>
+    </div>
+    <div class="hero__scroll-cue">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow" data-i18n="about.eyebrow">Get to know me</p>
+        <h2 class="section__title" data-i18n-html="about.title">About <span class="accent">Me</span></h2>
+      </div>
+      <div class="about__grid">
+
+        <div class="about__image-wrap reveal">
+          <div class="about__image-glow"></div>
+          <img src="images/pfp.jpeg" alt="Abdullah Kawadis" class="about__img" />
+          <div class="about__badge about__badge--1"><i class="bx bx-brain"></i><span>AI &amp; ML</span></div>
+          <div class="about__badge about__badge--2"><i class="bx bxl-python"></i><span>Python Dev</span></div>
         </div>
-    </section>
 
-    <section class="contact section" id="contact">
-        <h2 class="section__title">Contact Me</h2>
-        <div class="contact__container container grid">
-            <div class="contact__info animate__animated animate__fadeInLeft">
-                <h3 class="contact__title">Let's talk</h3>
-                <p class="contact__description">Feel free to reach out to me via email, phone, or social media.</p>
-                <div class="contact__data">
-                    <i class="bx bxs-phone contact__icon"></i>
-                    <span class="contact__info-title">Phone:</span>
-                    <span class="contact__info-description">01127319295</span>
-                </div>
-                <div class="contact__data">
-                    <i class="bx bxs-envelope contact__icon"></i>
-                    <span class="contact__info-title">Email:</span>
-                    <a href="mailto:abdullahquadis@gmail.com" class="contact__info-description">abdullahquadis@gmail.com</a>
-                </div>
-                <div class="contact__data">
-                    <i class="bx bxs-map contact__icon"></i>
-                    <span class="contact__info-title">Location:</span>
-                    <span class="contact__info-description">Malacca, Malaysia</span>
-                </div>
+        <div class="about__content reveal reveal--right">
+          <h3 class="about__heading" data-i18n="about.heading">Turning Data & Code into Intelligent Solutions</h3>
+          <p class="about__text" data-i18n-html="about.text1">
+            I'm <strong>Abdullah Zeyed Kawadis</strong>, a fresh graduate with a
+            <strong>Bachelor of Computer Science (Hons) in Artificial Intelligence</strong> from
+            <strong>Multimedia University (MMU)</strong>, Malacca — achieving a CGPA of <strong>3.21</strong>.
+          </p>
+          <p class="about__text" data-i18n-html="about.text2">
+            Throughout my degree I've worked across AI & machine learning, computer vision, natural language processing,
+            cybersecurity, cloud computing, full-stack web development, and data analytics. I completed my
+            <strong>Industrial Training</strong> in 2025, gaining real-world software engineering experience.
+          </p>
+          <p class="about__text" data-i18n="about.text3">
+            I'm passionate about building things that matter — from predictive ML models to secure web systems and
+            intelligent computer vision pipelines. When I'm not coding, I'm building Discord bots or exploring new tech.
+          </p>
+
+          <div class="about__stats">
+            <div class="about__stat">
+              <span class="about__stat-num counter" data-target="321">0</span>
+              <span class="about__stat-label" data-i18n="about.stat1">CGPA (×100)</span>
             </div>
-            <form action="mailto:abdullahquadis@gmail.com" method="POST" enctype="text/plain" class="contact__form animate__animated animate__fadeInRight">
-                <div class="contact__inputs">
-                    <input type="text" name="name" placeholder="Name" class="contact__input" required>
-                    <input type="email" name="email" placeholder="Email" class="contact__input" required>
-                </div>
-                <textarea name="message" placeholder="Message" class="contact__input" required></textarea>
-                <button type="submit" class="button">Send Message</button>
-            </form>
+            <div class="about__stat">
+              <span class="about__stat-num counter" data-target="6">0</span>
+              <span class="about__stat-label" data-i18n="about.stat2">Projects</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num counter" data-target="20">0</span>
+              <span class="about__stat-label" data-i18n="about.stat3">Courses</span>
+            </div>
+            <div class="about__stat">
+              <span class="about__stat-num counter" data-target="3">0</span>
+              <span class="about__stat-label" data-i18n="about.stat4">Years Study</span>
+            </div>
+          </div>
+
+          <div class="about__education">
+            <div class="edu__item">
+              <div class="edu__icon"><i class="bx bxs-graduation"></i></div>
+              <div>
+                <p class="edu__name" data-i18n="about.edu1">MMU — BCS (Hons) Artificial Intelligence</p>
+                <p class="edu__period" data-i18n-html="about.edu1p">2022 – 2025 &nbsp;·&nbsp; CGPA 3.21 &nbsp;·&nbsp; <span class="edu__badge">Graduated</span></p>
+              </div>
+            </div>
+            <div class="edu__item">
+              <div class="edu__icon"><i class="bx bxs-school"></i></div>
+              <div>
+                <p class="edu__name" data-i18n="about.edu2">Al-Kon International School</p>
+                <p class="edu__period" data-i18n="about.edu2p">Pre-University</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="bx bx-up-arrow-alt scrollup__icon"></i>
-    </a>
+      </div>
+    </div>
+  </section>
 
-    <script src="index.js"></script>
+  <!-- ===== SKILLS ===== -->
+  <section class="section skills-section" id="skills">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow" data-i18n="skills.eyebrow">Built from 20+ university courses</p>
+        <h2 class="section__title" data-i18n-html="skills.title">My <span class="accent">Skills</span></h2>
+      </div>
+
+      <!-- Tab filters -->
+      <div class="skills__tabs reveal">
+        <button class="skill-tab active" data-filter="all" data-i18n="tab.all">All</button>
+        <button class="skill-tab" data-filter="ai" data-i18n="tab.ai">AI &amp; ML</button>
+        <button class="skill-tab" data-filter="programming" data-i18n="tab.prog">Programming</button>
+        <button class="skill-tab" data-filter="web" data-i18n="tab.web">Web &amp; Data</button>
+        <button class="skill-tab" data-filter="security" data-i18n="tab.sec">Security &amp; Cloud</button>
+      </div>
+
+      <div class="skills__grid" id="skills-grid">
+        <!-- AI & ML -->
+        <div class="skill-card reveal" data-category="ai" style="--delay:0s"><div class="skill-card__icon"><i class="bx bx-brain"></i></div><span class="skill-card__label">Machine Learning</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="ai" style="--delay:0.05s"><div class="skill-card__icon"><i class="bx bx-bot"></i></div><span class="skill-card__label">Artificial Intelligence</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="ai" style="--delay:0.1s"><div class="skill-card__icon"><i class="bx bx-camera"></i></div><span class="skill-card__label">Computer Vision</span><span class="skill-card__level level--intermediate">Intermediate</span></div>
+        <div class="skill-card reveal" data-category="ai" style="--delay:0.15s"><div class="skill-card__icon"><i class="bx bx-comment-dots"></i></div><span class="skill-card__label">NLP</span><span class="skill-card__level level--intermediate">Intermediate</span></div>
+        <div class="skill-card reveal" data-category="ai" style="--delay:0.2s"><div class="skill-card__icon"><i class="bx bx-network-chart"></i></div><span class="skill-card__label">Neural Networks</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="ai" style="--delay:0.25s"><div class="skill-card__icon"><i class="bx bx-search-alt"></i></div><span class="skill-card__label">Pattern Recognition</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="ai" style="--delay:0.3s"><div class="skill-card__icon"><i class="bx bx-bulb"></i></div><span class="skill-card__label">Expert Systems</span><span class="skill-card__level level--intermediate">Intermediate</span></div>
+
+        <!-- Programming -->
+        <div class="skill-card reveal" data-category="programming" style="--delay:0s"><div class="skill-card__icon"><i class="bx bxl-python"></i></div><span class="skill-card__label">Python</span><span class="skill-card__level level--advanced">Advanced</span></div>
+        <div class="skill-card reveal" data-category="programming" style="--delay:0.05s"><div class="skill-card__icon"><i class="bx bxl-javascript"></i></div><span class="skill-card__label">JavaScript</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="programming" style="--delay:0.1s"><div class="skill-card__icon"><i class="bx bxl-java"></i></div><span class="skill-card__label">Java</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="programming" style="--delay:0.15s"><div class="skill-card__icon"><i class="bx bxl-c-plus-plus"></i></div><span class="skill-card__label">C++</span><span class="skill-card__level level--intermediate">Intermediate</span></div>
+        <div class="skill-card reveal" data-category="programming" style="--delay:0.2s"><div class="skill-card__icon"><i class="bx bxl-php"></i></div><span class="skill-card__label">PHP</span><span class="skill-card__level level--intermediate">Intermediate</span></div>
+        <div class="skill-card reveal" data-category="programming" style="--delay:0.25s"><div class="skill-card__icon"><i class="bx bxl-nodejs"></i></div><span class="skill-card__label">Node.js</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="programming" style="--delay:0.3s"><div class="skill-card__icon"><i class="bx bx-code-curly"></i></div><span class="skill-card__label">OOP &amp; Design Patterns</span><span class="skill-card__level level--advanced">Advanced</span></div>
+        <div class="skill-card reveal" data-category="programming" style="--delay:0.35s"><div class="skill-card__icon"><i class="bx bx-git-branch"></i></div><span class="skill-card__label">Algorithm Design</span><span class="skill-card__level level--advanced">Advanced</span></div>
+
+        <!-- Web & Data -->
+        <div class="skill-card reveal" data-category="web" style="--delay:0s"><div class="skill-card__icon"><i class="bx bxl-html5"></i></div><span class="skill-card__label">HTML5 / CSS3</span><span class="skill-card__level level--advanced">Advanced</span></div>
+        <div class="skill-card reveal" data-category="web" style="--delay:0.05s"><div class="skill-card__icon"><i class="bx bx-globe"></i></div><span class="skill-card__label">Web Applications</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="web" style="--delay:0.1s"><div class="skill-card__icon"><i class="bx bxs-data"></i></div><span class="skill-card__label">MySQL / SQL</span><span class="skill-card__level level--advanced">Advanced</span></div>
+        <div class="skill-card reveal" data-category="web" style="--delay:0.15s"><div class="skill-card__icon"><i class="bx bx-bar-chart-alt"></i></div><span class="skill-card__label">Data Analytics</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="web" style="--delay:0.2s"><div class="skill-card__icon"><i class="bx bx-table"></i></div><span class="skill-card__label">Data Structures</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="web" style="--delay:0.25s"><div class="skill-card__icon"><i class="bx bx-cube-alt"></i></div><span class="skill-card__label">Semantic Web / RDF</span><span class="skill-card__level level--intermediate">Intermediate</span></div>
+        <div class="skill-card reveal" data-category="web" style="--delay:0.3s"><div class="skill-card__icon"><i class="bx bx-layout"></i></div><span class="skill-card__label">UI/UX (HCI)</span><span class="skill-card__level level--proficient">Proficient</span></div>
+
+        <!-- Security & Cloud -->
+        <div class="skill-card reveal" data-category="security" style="--delay:0s"><div class="skill-card__icon"><i class="bx bx-shield-alt-2"></i></div><span class="skill-card__label">Ethical Hacking</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="security" style="--delay:0.05s"><div class="skill-card__icon"><i class="bx bx-lock-alt"></i></div><span class="skill-card__label">Security Assessment</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="security" style="--delay:0.1s"><div class="skill-card__icon"><i class="bx bx-cloud"></i></div><span class="skill-card__label">Cloud Computing</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="security" style="--delay:0.15s"><div class="skill-card__icon"><i class="bx bx-wifi"></i></div><span class="skill-card__label">Computer Networks</span><span class="skill-card__level level--advanced">Advanced</span></div>
+        <div class="skill-card reveal" data-category="security" style="--delay:0.2s"><div class="skill-card__icon"><i class="bx bx-server"></i></div><span class="skill-card__label">Operating Systems</span><span class="skill-card__level level--proficient">Proficient</span></div>
+        <div class="skill-card reveal" data-category="security" style="--delay:0.25s"><div class="skill-card__icon"><i class="bx bx-task"></i></div><span class="skill-card__label">Software Engineering</span><span class="skill-card__level level--advanced">Advanced</span></div>
+        <div class="skill-card reveal" data-category="security" style="--delay:0.3s"><div class="skill-card__icon"><i class="bx bx-briefcase"></i></div><span class="skill-card__label">Project Management</span><span class="skill-card__level level--proficient">Proficient</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIENCE ===== -->
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow" data-i18n="exp.eyebrow">Real-world background</p>
+        <h2 class="section__title" data-i18n-html="exp.title">My <span class="accent">Experience</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline__item reveal">
+          <div class="timeline__dot"><i class="bx bx-buildings"></i></div>
+          <div class="timeline__card">
+            <div class="timeline__card-header">
+              <div>
+                <h3 class="timeline__role" data-i18n="exp1.role">Institutional Resources &amp; Projects Trainee</h3>
+                <div class="timeline__company-wrap">
+                  <span class="timeline__company-main" data-i18n="exp1.company">Rawaf Mina For Pilgrims Services</span>
+                  <span class="timeline__collab-inline" data-i18n="exp1.collab">in collaboration with GLOBE Logistics, Jeddah</span>
+                </div>
+                <div class="timeline__location-row"><i class="bx bxs-map-pin"></i> <span data-i18n="exp1.loc">Makkah, Saudi Arabia</span></div>
+              </div>
+              <span class="timeline__period" data-i18n="exp1.date">Jul 2025 – Oct 2025</span>
+            </div>
+            <div class="timeline__collab-badge">
+              <i class="bx bx-certification"></i>
+              <span data-i18n-html="exp1.badge">MMU Industrial Training Program &nbsp;·&nbsp; Ref: EEC02163</span>
+            </div>
+            <p class="timeline__desc" data-i18n-html="exp1.desc">
+              Completed industrial training as part of the <strong>MMU Industrial Training Program</strong>. The training was officially coordinated through <strong>GLOBE Logistics (Jeddah)</strong> and conducted at <strong>Rawaf Mina</strong> in Makkah, where I gained hands-on experience in real-world systems, data handling, and project workflows within the Institutional Resources &amp; Projects department.
+            </p>
+            <div class="timeline__tags">
+              <span>Institutional Systems</span><span>Project Management</span><span>Data Handling</span><span>Project Workflows</span><span>Makkah, KSA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" style="--delay:0.15s">
+          <div class="timeline__dot"><i class="bx bx-trophy"></i></div>
+          <div class="timeline__card">
+            <div class="timeline__card-header">
+              <div>
+                <h3 class="timeline__role" data-i18n="exp2.role">Final Year Project — AI Research</h3>
+                <p class="timeline__company" data-i18n-html="exp2.company">Multimedia University &nbsp;·&nbsp; Melaka Campus</p>
+              </div>
+              <span class="timeline__period" data-i18n="exp2.date">2024 – 2025</span>
+            </div>
+            <p class="timeline__desc" data-i18n-html="exp2.desc">
+              Conducted an independent AI/CS research project (FYP1 &amp; FYP2) spanning two trimesters.
+              Developed a full research methodology, implemented a working system, and produced a formal thesis and presentation.
+              Demonstrated deep specialisation in AI topics gained across the entire programme.
+            </p>
+            <div class="timeline__tags">
+              <span>Research</span><span>AI</span><span>Technical Writing</span><span>Presentation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal" style="--delay:0.3s">
+          <div class="timeline__dot"><i class="bx bx-code-alt"></i></div>
+          <div class="timeline__card">
+            <div class="timeline__card-header">
+              <div>
+                <h3 class="timeline__role" data-i18n="exp3.role">Freelance & Personal Projects</h3>
+                <p class="timeline__company" data-i18n="exp3.company">Self-Directed</p>
+              </div>
+              <span class="timeline__period" data-i18n="exp3.date">2022 – Present</span>
+            </div>
+            <p class="timeline__desc" data-i18n="exp3.desc">
+              Independently designed and built 6+ projects spanning preschool educational platforms, ML predictive models,
+              Discord music bots with AI features, industrial parts recognition systems, air quality dashboards,
+              and CSS 3D simulations. Continuously learning and building throughout the degree.
+            </p>
+            <div class="timeline__tags">
+              <span>Python</span><span>Node.js</span><span>OpenCV</span><span>Full-Stack</span><span>ML</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="section projects-section" id="projects">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow" data-i18n="projects.eyebrow">What I've built</p>
+        <h2 class="section__title" data-i18n-html="projects.title">Featured <span class="accent">Projects</span></h2>
+      </div>
+      <div class="projects__grid">
+
+        <!-- FYP 1 -->
+        <article class="project-card project-card--fyp reveal" style="--delay:0s">
+          <div class="project-card__fyp-header">
+            <div class="project-card__fyp-badge"><i class="bx bx-trophy"></i> Final Year Project 1</div>
+            <div class="project-card__fyp-icon"><i class="bx bx-heart-circle"></i></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title" data-i18n="fyp1.title">Early Diabetes Risk Prediction Using Machine Learning: An Interpretable and User-Friendly Web-Based Approach</h3>
+            <p class="project-card__desc" data-i18n="fyp1.desc">Developed a machine learning system to predict early diabetes risk with interpretable outputs and a user-friendly web interface designed for non-technical users.</p>
+            <div class="project-card__stack"><span>Python</span><span>Scikit-learn</span><span>XAI / SHAP</span><span>Flask</span><span>Web App</span></div>
+          </div>
+        </article>
+
+        <!-- FYP 2 -->
+        <article class="project-card project-card--fyp project-card--fyp2 reveal" style="--delay:0.1s">
+          <div class="project-card__fyp-header">
+            <div class="project-card__fyp-badge"><i class="bx bx-trophy"></i> Final Year Project 2</div>
+            <div class="project-card__fyp-icon"><i class="bx bx-dna"></i></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title" data-i18n="fyp2.title">AI-Based Breast Cancer Detection Using Deep Learning and Explainable AI on Histopathological Images</h3>
+            <p class="project-card__desc" data-i18n="fyp2.desc">Built a deep learning model for breast cancer detection on histopathological images, integrating explainable AI techniques to improve interpretability, transparency, and clinical trust.</p>
+            <div class="project-card__stack"><span>Python</span><span>TensorFlow</span><span>Deep Learning</span><span>XAI / Grad-CAM</span><span>CNN</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" style="--delay:0.18s">
+          <div class="project-card__img-wrap">
+            <img src="images/The Preschool Math Learning System web.png" alt="Preschool Math Learning System" class="project-card__img" loading="lazy" />
+            <div class="project-card__overlay"><span class="project-card__tag">Web App</span></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Preschool Math Learning System</h3>
+            <p class="project-card__desc">Interactive web platform teaching mathematics to preschool children through gamified lessons and engaging visuals.</p>
+            <div class="project-card__stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" style="--delay:0.08s">
+          <div class="project-card__img-wrap">
+            <img src="images/Machine-Learning-COVID-19-Predictive-Modeling-for-future-cases.png" alt="COVID-19 Predictive Modeling" class="project-card__img" loading="lazy" />
+            <div class="project-card__overlay"><span class="project-card__tag">ML / Data Science</span></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">COVID-19 Predictive Modelling</h3>
+            <p class="project-card__desc">ML models predicting future COVID-19 case trends using time-series analysis and regression techniques.</p>
+            <div class="project-card__stack"><span>Python</span><span>Scikit-learn</span><span>Pandas</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" style="--delay:0.16s">
+          <div class="project-card__img-wrap">
+            <img src="images/Discord audio bot.png" alt="Discord Audio Bot" class="project-card__img" loading="lazy" />
+            <div class="project-card__overlay"><span class="project-card__tag">Bot / Node.js</span></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Discord Audio Bot</h3>
+            <p class="project-card__desc">Feature-rich Discord music bot with AI-powered song suggestions, rich embeds, progress bars, and a premium UI.</p>
+            <div class="project-card__stack"><span>Node.js</span><span>Discord.js</span><span>YouTube API</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" style="--delay:0.24s">
+          <div class="project-card__img-wrap">
+            <img src="images/Implementation of Parts Recognition and Counting System.png" alt="Parts Recognition" class="project-card__img" loading="lazy" />
+            <div class="project-card__overlay"><span class="project-card__tag">Computer Vision</span></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Parts Recognition &amp; Counting System</h3>
+            <p class="project-card__desc">AI-powered system using computer vision to detect, classify, and count industrial parts in real-time.</p>
+            <div class="project-card__stack"><span>Python</span><span>OpenCV</span><span>YOLO</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" style="--delay:0.32s">
+          <div class="project-card__img-wrap">
+            <img src="images/An Application Development for Air Quality Insights for Southeast Asia web.png" alt="Air Quality SEA" class="project-card__img" loading="lazy" />
+            <div class="project-card__overlay"><span class="project-card__tag">Data Viz / Web</span></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Air Quality Insights — SE Asia</h3>
+            <p class="project-card__desc">Web app showing real-time and historical air quality data across Southeast Asia with interactive charts.</p>
+            <div class="project-card__stack"><span>JavaScript</span><span>Chart.js</span><span>API</span></div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" style="--delay:0.4s">
+          <div class="project-card__img-wrap">
+            <img src="images/Solar system cycle web.png" alt="Solar System Web" class="project-card__img" loading="lazy" />
+            <div class="project-card__overlay"><span class="project-card__tag">Interactive / CSS</span></div>
+          </div>
+          <div class="project-card__body">
+            <h3 class="project-card__title">Solar System Cycle Web</h3>
+            <p class="project-card__desc">Animated, interactive solar system simulation built with pure CSS animations and vanilla JavaScript.</p>
+            <div class="project-card__stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CERTIFICATIONS ===== -->
+  <section class="section certs-section" id="certifications">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow" data-i18n="certs.eyebrow">Achievements &amp; Recognition</p>
+        <h2 class="section__title" data-i18n-html="certs.title">Certifi<span class="accent">cations</span></h2>
+      </div>
+      <div class="certs__grid">
+
+        <div class="cert-card reveal" style="--delay:0s">
+          <div class="cert-card__inner">
+            <div class="cert-card__front">
+              <div class="cert-card__icon"><i class="bx bx-cloud"></i></div>
+              <h3 class="cert-card__title">AWS Academy Cloud Foundations</h3>
+              <p class="cert-card__issuer">AWS Academy Graduate</p>
+              <p class="cert-card__date"><i class="bx bx-calendar"></i> 17 January 2025 · 20 hrs</p>
+              <p class="cert-card__hover-hint">Hover to read more</p>
+            </div>
+            <div class="cert-card__back cert-card__back--aws">
+              <i class="bx bx-cloud cert-card__back-icon"></i>
+              <h3>AWS Cloud Foundations</h3>
+              <p>Completed <strong>20 hours</strong> of AWS Academy cloud training. Awarded the <strong>AWS Academy Graduate</strong> credential for completing the Cloud Foundations course.</p>
+              <p class="cert-card__date-back">January 17, 2025</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal" style="--delay:0.1s">
+          <div class="cert-card__inner">
+            <div class="cert-card__front">
+              <div class="cert-card__icon"><i class="bx bx-award"></i></div>
+              <h3 class="cert-card__title">Certificate of Appreciation</h3>
+              <p class="cert-card__issuer">IEM · Multimedia University</p>
+              <p class="cert-card__date"><i class="bx bx-calendar"></i> 14 September 2024</p>
+              <p class="cert-card__hover-hint">Hover to read more</p>
+            </div>
+            <div class="cert-card__back">
+              <i class="bx bx-award cert-card__back-icon"></i>
+              <h3>Certificate of Appreciation</h3>
+              <p>Awarded by the <strong>Institution of Engineers, Malaysia (IEM)</strong> for achievement and participation in the <strong>Mechanic Workshop</strong> at MMU Melaka.</p>
+              <p class="cert-card__date-back">Sept 14, 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal" style="--delay:0.2s">
+          <div class="cert-card__inner">
+            <div class="cert-card__front">
+              <div class="cert-card__icon"><i class="bx bx-chip"></i></div>
+              <h3 class="cert-card__title">Pneumatic &amp; ESP32 Workshop</h3>
+              <p class="cert-card__issuer">IEM · Multimedia University</p>
+              <p class="cert-card__date"><i class="bx bx-calendar"></i> 21 September 2024</p>
+              <p class="cert-card__hover-hint">Hover to read more</p>
+            </div>
+            <div class="cert-card__back">
+              <i class="bx bx-chip cert-card__back-icon"></i>
+              <h3>Pneumatic &amp; ESP32 Workshop</h3>
+              <p>Certificate of Participation for the <strong>Pneumatic &amp; ESP32 Programming Workshop</strong> held by the Institution of Engineers Malaysia (IEM) at MMU Melaka.</p>
+              <p class="cert-card__date-back">Sept 21, 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal" style="--delay:0.3s">
+          <div class="cert-card__inner">
+            <div class="cert-card__front">
+              <div class="cert-card__icon"><i class="bx bx-shield-alt-2"></i></div>
+              <h3 class="cert-card__title">Capture The Flag (CTF)</h3>
+              <p class="cert-card__issuer">Nexagate × MMU</p>
+              <p class="cert-card__date"><i class="bx bx-calendar"></i> 15 June 2024</p>
+              <p class="cert-card__hover-hint">Hover to read more</p>
+            </div>
+            <div class="cert-card__back cert-card__back--ctf">
+              <i class="bx bx-shield-alt-2 cert-card__back-icon"></i>
+              <h3>CTF Competition</h3>
+              <p>Certificate of Participation for the <strong>"Capture The Flag"</strong> cybersecurity competition, organised by <strong>Nexagate Sdn Bhd × MMU</strong>.</p>
+              <p class="cert-card__date-back">June 15, 2024</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal" style="--delay:0.4s">
+          <div class="cert-card__inner">
+            <div class="cert-card__front">
+              <div class="cert-card__icon"><i class="bx bxl-c-plus-plus"></i></div>
+              <h3 class="cert-card__title">C++ Workshop</h3>
+              <p class="cert-card__issuer">MMU IT Society</p>
+              <p class="cert-card__date"><i class="bx bx-calendar"></i> 14 April 2023</p>
+              <p class="cert-card__hover-hint">Hover to read more</p>
+            </div>
+            <div class="cert-card__back">
+              <i class="bxl-c-plus-plus cert-card__back-icon"><i class="bx bxl-c-plus-plus"></i></i>
+              <h3>C++ Workshop</h3>
+              <p>Certificate of Participation for the <strong>C++ Workshop</strong> organised by the <strong>Information Technology Society, MMU Melaka</strong>.</p>
+              <p class="cert-card__date-back">April 14, 2023</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="cert-card reveal" style="--delay:0.5s">
+          <div class="cert-card__inner">
+            <div class="cert-card__front">
+              <div class="cert-card__icon"><i class="bx bx-briefcase-alt-2"></i></div>
+              <h3 class="cert-card__title">Experience Certificate</h3>
+              <p class="cert-card__issuer">Rawaf Mina · Saudi Arabia</p>
+              <p class="cert-card__date"><i class="bx bx-calendar"></i> Jul – Oct 2025</p>
+              <p class="cert-card__hover-hint">Hover to read more</p>
+            </div>
+            <div class="cert-card__back cert-card__back--exp">
+              <i class="bx bx-briefcase-alt-2 cert-card__back-icon"></i>
+              <h3>شهادة خبرة</h3>
+              <p>Official experience letter from <strong>Rawaf Mina For Pilgrims Services</strong> confirming the industrial training role as <strong>Trainee</strong> in Institutional Resources &amp; Projects (Jul 21 – Oct 11, 2025).</p>
+              <p class="cert-card__date-back">Ref: EEC02163</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <p class="section__eyebrow" data-i18n="contact.eyebrow">Let's connect</p>
+        <h2 class="section__title" data-i18n-html="contact.title">Get In <span class="accent">Touch</span></h2>
+      </div>
+      <div class="contact__grid">
+
+        <div class="contact__info reveal">
+          <p class="contact__tagline" data-i18n="contact.tagline">Open to full-time roles, internships, freelance projects, or just a good conversation about AI and tech.</p>
+          <div class="contact__items">
+            <a href="mailto:abdullahquadis@gmail.com" class="contact__item">
+              <div class="contact__item-icon"><i class="bx bxs-envelope"></i></div>
+              <div><p class="contact__item-label" data-i18n="contact.email">Email</p><p class="contact__item-value">abdullahquadis@gmail.com</p></div>
+            </a>
+            <div class="contact__item">
+              <div class="contact__item-icon"><i class="bx bxs-phone"></i></div>
+              <div><p class="contact__item-label" data-i18n="contact.phone">Phone</p><p class="contact__item-value">01127319295</p></div>
+            </div>
+            <div class="contact__item">
+              <div class="contact__item-icon"><i class="bx bxs-map"></i></div>
+              <div><p class="contact__item-label" data-i18n="contact.location">Location</p><p class="contact__item-value">Malacca, Malaysia</p></div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact__form reveal reveal--right" action="mailto:abdullahquadis@gmail.com" method="POST" enctype="text/plain">
+          <div class="form__row">
+            <div class="form__group"><label class="form__label">Name</label><input type="text" name="name" class="form__input" placeholder="Your name" required /></div>
+            <div class="form__group"><label class="form__label">Email</label><input type="email" name="email" class="form__input" placeholder="your@email.com" required /></div>
+          </div>
+          <div class="form__group"><label class="form__label">Subject</label><input type="text" name="subject" class="form__input" placeholder="What's this about?" /></div>
+          <div class="form__group"><label class="form__label">Message</label><textarea name="message" class="form__input form__textarea" placeholder="Tell me about your project or opportunity..." required></textarea></div>
+          <button type="submit" class="btn btn--primary btn--full" data-i18n-html="contact.send"><i class="bx bx-send"></i> Send Message</button>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <a href="#home" class="nav__logo"><span class="nav__logo-bracket">&lt;</span>AK<span class="nav__logo-bracket">/&gt;</span></a>
+      <p class="footer__copy" data-i18n-html="footer.copy">© 2026 Abdullah Zeyed Kawadis &nbsp;·&nbsp; BCS (Hons) AI Graduate &nbsp;·&nbsp; MMU</p>
+      <div class="footer__socials">
+        <a href="mailto:abdullahquadis@gmail.com" aria-label="Email"><i class="bx bxs-envelope"></i></a>
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scroll-top" aria-label="Back to top"><i class="bx bx-chevron-up"></i></button>
+  <script src="index.js"></script>
 </body>
 </html>
